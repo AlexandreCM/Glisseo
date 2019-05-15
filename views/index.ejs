@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta  charset="UTF-8"  />
+        <title>Sauvegarde Flippendo</title>
+        <link href="/css/style.css" rel="stylesheet"  />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body>
+
+    <!--  Start Work Space-->
+
+<% if(error !== null){ %>
+    <div class="isa_error">
+        <i class="fa fa-times-circle"></i>
+        <%= error %>
+    </div>
+<% } %>
+
+    <h1>Sauvegarder mes PDF</h1>
+
+    <form action="/control" enctype="multipart/form-data" method="post">
+        <div class="input_file">
+            <label for="file" class="file_label">
+                <i class="fa fa-upload" aria-hidden="true"></i>
+                Choisir
+            </label>
+            <input id="file" type="file" name="file" accept="application/pdf" multiple/>
+        </div>
+        <label for="envoie">
+            <i class="fa fa-send" aria-hidden="true"></i>
+            Envoyer
+        </label>
+        <input type="submit" id="envoie" class="btn">
+    </form>
+
+
+
+
+    <!--  Start Work Space-->
+    <script src="/js/uploadFile.js"></script>
+</body>
+</html>

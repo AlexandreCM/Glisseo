@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta  charset="UTF-8"  />
+        <title>Sauvegarde Flippendo</title>
+        <link href="/css/style.css" rel="stylesheet"  />
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body>
+
+    <!--  Start Work Space-->
+
+    <% if(error !== null){ %>
+        <div class="isa_error">
+            <i class="fa fa-times-circle"></i>
+            <%= error %>
+        </div>
+    <% } %>
+
+    <h1>Vérification</h1>
+
+    <% if(entities !== null ){ %>
+    <% if(entities !== undefined ){ %>
+    <table style="border: 1px solid black;">
+        <% entities.forEach( entity => { %>
+            <% if(entity !== undefined) {%>
+        <thead><td style="border: 1px solid black;"><p style="font-weight: bold;"><%= entity.pdf150 %>. <%= entity.nombrePage %> pages.</p></td></thead>
+        <tr><td style="border: 1px solid black;"><p style="text-align: justify;"><%= entity.ocr %></p></td></tr>
+            <% } %>
+        <% }) %>
+    </table>
+    <% } %>
+    <% } %>
+</body>
+</html>
